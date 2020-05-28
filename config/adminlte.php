@@ -207,22 +207,17 @@ return [
     |
     */
 
-    'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],       
+    'menu' => [               
         [
             'text' => 'Planos',
             'url' => 'admin/plans',
             'icon' => 'fas fa-list-alt'
         ],
+        [
+            'text' => 'Perfis',
+            'url' => 'admin/profiles',
+            'icon' => 'fas fa-address-book'            
+        ]
     ],
 
     /*

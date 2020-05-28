@@ -13,6 +13,13 @@
 Route::prefix('admin')->namespace('Admin')->group( function() {
 
     /**
+     * Rotas dos Perfis
+     */
+
+    Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
+    Route::resource('profiles', 'ACL\ProfileController');
+
+    /**
      * Rotas Detalhes dos Planos
      */
     Route::delete('plans/{url}/details/{idDetail}', 'DetailPlanController@destroy')->name('details.plan.destroy');
