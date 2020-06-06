@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('admin')->namespace('Admin')->group( function() {
+Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function() {
 
 
     /**
@@ -69,6 +69,8 @@ Route::prefix('admin')->namespace('Admin')->group( function() {
     Route::get('/', 'PlanController@index')->name('admin.index');
 });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Site')->group( function(){
+    Route::get('/', 'SiteController@index')->name('site.home');
 });
+
+Auth::routes();
