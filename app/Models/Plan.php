@@ -25,6 +25,13 @@ class Plan extends Model
         return $this->belongsToMany(Profile::class);
     }
 
+    /**
+     * Retorna os tenants (empresas inquilinas)
+     */
+    public function tenants()
+    {
+        return $this->hasMany(Tenant::class);
+    }
 
     /**
      * Profiles not linked to this plan
