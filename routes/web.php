@@ -12,6 +12,13 @@
 */
 Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function() {
 
+    /**
+     * Rotas dos Usuários
+     */
+
+    Route::any('users/search', 'UserController@search')->name('users.search');
+    Route::resource('users', 'UserController');
+
 
     /**
      * Plans X Profiles
