@@ -12,6 +12,14 @@
 */
 Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function() {
 
+
+    /**
+     * Rotas das Categorias
+     */
+
+    Route::any('categories/search', 'CategoryController@search')->name('categories.search');
+    Route::resource('categories', 'CategoryController');
+
     /**
      * Rotas dos Usuários
      */
