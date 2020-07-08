@@ -14,6 +14,14 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function(
 
 
     /**
+     * Rotas dos Produtos
+     */
+
+    Route::any('products/search', 'ProductController@search')->name('products.search');
+    Route::resource('products', 'ProductController');
+
+
+    /**
      * Rotas das Categorias
      */
 
