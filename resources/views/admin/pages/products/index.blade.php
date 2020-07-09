@@ -19,10 +19,9 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th style="max-width: 90px">Imagem</th>
-                        <th>Título</th>
-                        <th>Preço</th>
-                        <th style="width: 150px">Ações</th>
+                        <th style="width: 100px">Imagem</th>
+                        <th>Título</th>                        
+                        <th style="width: 190px">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,9 +30,9 @@
                             <td>
                                 <img src="{{ url("storage/{$product->image}") }}" alt="{{$product->title}}" style="max-width: 90px">
                             </td>
-                            <td>{{$product->title}}</td>
-                            <td>{{$product->price}}</td>
+                            <td>{{$product->title}}</td>                            
                             <td style="width=10px">                                
+                                <a href="{{ route('products.categories', $product->id) }}" class="btn btn-warning" title="Categorias"><i class="fas fa-layer-group"></i></a>
                                 <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">Editar</a>
                                 <a href="{{ route('products.show', $product->id) }}" class="btn btn-warning">Ver</a>                                
                             </td>                    
