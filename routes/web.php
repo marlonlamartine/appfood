@@ -12,6 +12,14 @@
 */
 Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function() {
 
+     /**
+     * Rotas de Mesas
+     */
+
+    Route::any('tables/search', 'TableController@search')->name('tables.search');
+    Route::resource('tables', 'TableController');
+
+
     /**
      * Categories X Products
      */
