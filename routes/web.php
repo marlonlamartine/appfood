@@ -12,6 +12,14 @@
 */
 Route::prefix('admin')->namespace('Admin')->middleware('auth')->group( function() {
 
+
+     /**
+     * Rotas dos Tenants
+     */
+
+    Route::any('tenants/search', 'TenantController@search')->name('tenants.search');
+    Route::resource('tenants', 'TenantController');
+
     
      /**
      * Rotas de Mesas
