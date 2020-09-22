@@ -3,7 +3,13 @@
 @section('title', 'Categorias')
 
 @section('content_header')
-    <h1>Categorias <a href="{{ route('categories.create') }}" class="btn btn-dark">Adicionar novo</a></h1>
+
+    <h1>Categorias 
+        @can('add_category')
+        <a href="{{ route('categories.create') }}" class="btn btn-dark">Adicionar novo</a>    
+        @endcan
+        
+    </h1>
 @stop
 
 @section('content')
