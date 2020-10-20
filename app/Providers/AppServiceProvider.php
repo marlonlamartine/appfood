@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\{Plan, Tenant, Category, Product};
 use App\Observers\{PlanObserver, TenantObserver, CategoryObserver, ProductObserver};
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
     }
 
     /**

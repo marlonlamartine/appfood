@@ -3,11 +3,28 @@
 namespace App\Services;
 
 use App\Models\Plan;
+use App\Repositories\Contracts\TenantRepositoryInterface;
 
 
 class TenantService
 {
-    private $plan, $data = [];    
+    private $plan, $data = [];
+    private $repository;
+    
+    public function __construct(TenantRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function getAllTenants(int $per_page)
+    {
+       return $this->repository->getAllTenants();
+    }
+
+    public function getTenantByUuid(string $uuid)
+    {
+        return $this->repository->getTenantByUuid($uuid);
+    }
 
     /**
      * Chama os métodos de armazenamento de tenants e users e retorna um usuario cadastrado
