@@ -2,9 +2,17 @@
 
 namespace App\Providers;
 
+use App\Repositories\{
+    CategoryRepository, 
+    TenantRepository
+};
+use App\Repositories\Contracts\{
+    CategoryRepositoryInterface, 
+    TenantRepositoryInterface
+};
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Contracts\TenantRepositoryInterface;
-use App\Repositories\TenantRepository;
+
+
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -18,6 +26,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             TenantRepositoryInterface::class,
             TenantRepository::class
+        );
+
+        $this->app->bind(
+            CategoryRepositoryInterface::class,
+            CategoryRepository::class
         );
     }
 
